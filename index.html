@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+   <body>
+    <div class ="d-flex justify-content-center  p-5"> 
+    <div class="container border border-dark rounded w-50 p-5 m-5">
+      
+     
+      <form>
+        <div class="form-group">
+          <label for="grossIncome">Enter gross annual income:  <img
+            src="icons/question-circle.svg"
+            data-toggle="tooltip" data-placement="top" title="Tooltip on top"
+            alt="info"
+            height="20"
+            width="20"/></label>
+          <input
+            type="text"
+            class="form-control"
+            style="background-image: url('icons/exclamation-circle.svg');background-repeat: no-repeat;background-position: center right;"
+            id="grossIncome"
+            placeholder="Enter gross annual income"
+            name="grossIncome"
+          />
+        </div>
+        <div class="form-group">
+          <label for="extraIncome">Enter extra income:  <img
+            src="icons/question-circle.svg"
+            alt="info"
+            height="20"
+            width="20"/>
+        </label>
+          <input
+            type="text"
+            class="form-control"
+            id="extraIncome"
+            placeholder="Enter extra income from other sources"
+            name="extraIncome"
+          />
+        </div>
+        <div class="form-group">
+          <label for="ageGroup">Enter age group:
+            <img
+            src="icons/question-circle.svg"
+            alt="info"
+            height="20"
+            width="20"/>
+          </label>
+          <select class="form-control" id="ageGroup">
+            <option selected>Open this select menu</option>
+            <option  value="< 40">age < 40</option>
+            <option value="40-60">age ≥ 40 but < 60</option>
+            <option value="≥ 60">age ≥ 60</option>    
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="grossIncome">Enter total applicable deductions: <img
+                src="icons/question-circle.svg"
+                alt="info"
+                height="20"
+                width="20"/></label>
+            <input
+
+              type="text"
+              class="form-control"
+              id="grossIncome"
+              placeholder="Add total applicable deductions"
+              name="grossIncome"
+            />
+          </div>
+        <div class ="d-flex justify-content-center pt-3"> 
+        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </div>
+      </form>
+    </div></div>
+    <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();   
+        });
+        </script>
+  </body>
+  
+</html>
