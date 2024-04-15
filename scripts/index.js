@@ -1,5 +1,3 @@
-
-
 const calculateTax = (grossIncome, extraIncome, ageGroup, deductions) => {
   let income = grossIncome + extraIncome - deductions;
   let tax = 0;
@@ -17,28 +15,41 @@ const calculateTax = (grossIncome, extraIncome, ageGroup, deductions) => {
   return tax;
 };
 
-const validate= () => {
- 
+const submitForm = () => {
   let grossIncome = parseInt(document.getElementById("grossIncome").value);
   let extraIncome = parseInt(document.getElementById("extraIncome").value);
   let ageGroup = document.getElementById("ageGroup").value;
   let deductions = parseInt(document.getElementById("deductions").value);
-  const taxForm = document.getElementById("taxForm");
-  console.log("grossIncome",grossIncome);
-  console.log("extraIncome",extraIncome);
-  console.log("ageGroup",ageGroup);
-  console.log("deductions",deductions);
-
- if(!grossIncome ||!extraIncome ||!ageGroup ||!deductions){
-    taxForm.classList.add('was-validated');
+  
+  validateField("grossIncome");
+  validateField("extraIncome");
+  validateField("ageGroup");
+  validateField("deductions");
+  if (!grossIncome || !extraIncome || !ageGroup || !deductions) {
     return;
- }
+  }
 
   let tax = calculateTax(grossIncome, extraIncome, ageGroup, deductions);
   let modalIncome = document.getElementById("exampleModalIncome");
-  var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {})
-  modalIncome.textContent= grossIncome + extraIncome - deductions-tax;
-  console.log("tax",tax);
+  var myModal = new bootstrap.Modal(
+    document.getElementById("exampleModal"),
+    {}
+  );
+  modalIncome.textContent = grossIncome + extraIncome - deductions - tax;
   myModal.show();
-  console.log("show");
 };
+function validateField(name) {
+    let field = document.getElementById(name);
+    console.log(field.type);
+    let value =field.value;
+    if(field.type=="text"){
+        value =parseInt(field.value);
+    }
+    if (!value) {    
+        field.classList.add("is-invalid");
+    } else {   
+        field.classList.remove("is-invalid");
+    }
+  
+}
+
