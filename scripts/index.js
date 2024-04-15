@@ -1,6 +1,5 @@
 
 
-
 const calculateTax = (grossIncome, extraIncome, ageGroup, deductions) => {
   let income = grossIncome + extraIncome - deductions;
   let tax = 0;
@@ -20,22 +19,21 @@ const calculateTax = (grossIncome, extraIncome, ageGroup, deductions) => {
 
 const validate= () => {
  
-console.log("xxxxxx")
   let grossIncome = parseInt(document.getElementById("grossIncome").value);
   let extraIncome = parseInt(document.getElementById("extraIncome").value);
   let ageGroup = document.getElementById("ageGroup").value;
   let deductions = parseInt(document.getElementById("deductions").value);
+  const taxForm = document.getElementById("taxForm");
   console.log("grossIncome",grossIncome);
   console.log("extraIncome",extraIncome);
   console.log("ageGroup",ageGroup);
   console.log("deductions",deductions);
 
-  // if (grossIncome.value == "") {
-  //     grossIncome.className ="form-control is-invalid";
-  //   // throw error
-  // } else {
-  //   // perform operation with form input
-  // }
+ if(!grossIncome ||!extraIncome ||!ageGroup ||!deductions){
+    taxForm.classList.add('was-validated');
+    return;
+ }
+
   let tax = calculateTax(grossIncome, extraIncome, ageGroup, deductions);
   let modalIncome = document.getElementById("exampleModalIncome");
   var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {})

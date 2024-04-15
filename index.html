@@ -11,7 +11,7 @@
     <div class="container border border-dark rounded w-50 p-5 m-5">
       
      
-      <form id ="taxForm">
+      <form id ="taxForm" class="d-grid gap-4">
         <div class="form-group">
           <label for="grossIncome">Enter gross annual income:  <img
             src="icons/question-circle.svg"
@@ -20,14 +20,14 @@
             alt="info"
             height="20"
             width="20"/></label>
+           
           <input
             type="text"
-            class="form-control"
+            class="form-control "
             id="grossIncome"
             placeholder="Enter gross annual income"
             name="grossIncome"
-            required
-          />
+            required>
           <div class="invalid-feedback">
             Please enter numbers only
            </div>
@@ -35,7 +35,8 @@
         <div class="form-group">
           <label for="extraIncome">Enter extra income:  <img
             src="icons/question-circle.svg"
-            data-toggle="tooltip" data-placement="top" title="Extra income is your income from any other sources"
+            data-bs-toggle="tooltip"  
+            title="Extra income is your income from any other sources"
             alt="info"
             height="20"
             width="20"/>
@@ -46,41 +47,52 @@
             id="extraIncome"
             placeholder="Enter extra income from other sources"
             name="extraIncome"
-          />
+            required>
+            <div class="invalid-feedback">
+                Please enter numbers only
+               </div>
         </div>
+        
         <div class="form-group">
           <label for="ageGroup">Enter age group:
             <img
             src="icons/question-circle.svg"
-            data-toggle="tooltip" data-placement="top" title="age group is the range in which your age falls"
+            data-bs-toggle="tooltip"  
+            title="age group is the range in which your age falls"
             alt="info"
             height="20"
             width="20"/>
           </label>
-          <select class="form-control" id="ageGroup">
-            <option selected>Age Group</option>
+          <select class="form-control" id="ageGroup"required>
+            <option selected></option>
             <option  value="< 40"><40</option>
             <option value="40-60">≥ 40 & < 60</option>
             <option value="≥ 60">≥ 60</option>    
           </select>
+           <div class="invalid-feedback">
+            Please select ageGroup
+           </div>
         </div>
         <div class="form-group">
             <label for="deductions">Enter total applicable deductions: <img
                 src="icons/question-circle.svg"
-                data-toggle="tooltip" data-placement="top" title=" Deductions is the total amount to be deducted from your income as a result of your investments"
+                data-bs-toggle="tooltip"  
+                title=" Deductions is the total amount to be deducted from your income as a result of your investments"
                 alt="info"
                 height="20"
                 width="20"/></label>
             <input
-
               type="text"
               class="form-control"
               id="deductions"
               placeholder="Add total applicable deductions"
               name="deductions"
-            />
+              required>
+              <div class="invalid-feedback">
+                Please enter numbers only
+               </div>
           </div>
-        <div class ="d-flex justify-content-center pt-3"> 
+        <div  class="d-grid"> 
         <button type="button" class="btn btn-primary " onclick="validate()">Submit</button>
         </div>
       </form>
@@ -97,7 +109,7 @@
          <h5>after tax deductions</h5>
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
